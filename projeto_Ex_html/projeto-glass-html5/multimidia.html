@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <title>tudo sobre o google glass</title>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/media.css"/>
+
+    <!-- link para o arquivo css -->
+    <head/>
+
+    <!-- parte de javascript para a mudança das fotos-->
+    <script language="JavaScript" src="_javascript/funcoes.js"> // tag usada para java script</script>
+
+<body>
+<div id="interface">                <!--delimita o site e o id e pra identificar -->
+    <header id="cabecalho">             <!--cabeçalho para qualquer coisa , em qualquer parte do site -->
+
+        <!--agrupar titulos -->
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está hegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/multimidia.png" height="121" width="200"/>
+
+        <!-- nav cria uma area de navegação, o MENU DE NAVEGAÇÃO -->
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul type="disc" >
+                <!-- ol lista ordenada , type e o tipo de marcação e start e da onde comecara ;;; e ul e uma lista nao ordenada, type - disc para ser bolinha-->
+                <!-- onmouseover e para quando passa o mouse por cima da imag, ja o onmouseout e pra quando tira -->
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="specs.html">especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="fotos.html">fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="multimidia.html">multimidia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="fale-conosco.html">contato</a></li>
+                <!-- caso queira criar uma lista dentro de outra
+                <ul type="disc">
+                <li>musicas</li>
+                <li>videos</li>
+                </ul>
+                -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="corpo-full">
+
+        <article id="noticia-principal">
+
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h3>glass > Fotos</h3>
+                    <h1>Raio-X no Google Glass</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3 class="direita">Atualizado em 23/Abril/2013</h3>
+                </hgroup>
+            </header>
+
+
+<!--
+ para anexar os arquivos de midia e audio
+ div, para fazer uma divisao disso td
+ source vem de origem, tipo img para imagem
+ controls e para inserir o playser
+ poter e a imagem que fica no video antes de apertar o play
+ -->
+
+<div id="tv-radio">
+    <audio id="musica" controls="controls">
+        <source src="_media/2009-lovers-carvings-bibio.mp3" type="audio/mpeg"/>
+    </audio>
+
+    <video id="filme" controls="controls" poster="_imagens/video-mini01.jpg">
+        <source src="_media/getting-started.mp4" type="video/mp4"/>
+    </video>
+</div>
+<!--PARA INSERIR VIDEO DO YOUTUBE-->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/90uPbUirZ3I" frameborder="0" allowfullscreen></iframe>
+
+
+
+        </article>
+    </section>
+
+    <footer id="rodape"> <!--*footer para a area de baixo do site, tipo aside e section-->
+        Copyright 2013 - by Gustavo Guanabara<br/>
+        <a href="http://www.facebook.com.br" target="_blank">Facebook</a> | Twitter</p>
+    </footer>
+
+</div>
+</body>
+</html>

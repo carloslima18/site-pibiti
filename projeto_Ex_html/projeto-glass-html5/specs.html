@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <title>tudo sobre o google glass</title>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/specs.css"/>
+    <!-- link para o arquivo css -->
+    <head/>
+
+    <!-- parte de javascript para a mudança das fotos-->
+    <script language="JavaScript" src="_javascript/funcoes.js"> // tag usada para java script</script>
+
+<body>
+<div id="interface">                <!--delimita o site e o id e pra identificar -->
+    <header id="cabecalho">             <!--cabeçalho para qualquer coisa , em qualquer parte do site -->
+
+        <!--agrupar titulos -->
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está hegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/glass-oculos-preto-peq.png" height="121" width="200"/>
+
+        <!-- nav cria uma area de navegação, o MENU DE NAVEGAÇÃO -->
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul type="disc" >
+                <!-- ol lista ordenada , type e o tipo de marcação e start e da onde comecara ;;; e ul e uma lista nao ordenada, type - disc para ser bolinha-->
+                <!-- onmouseover e para quando passa o mouse por cima da imag, ja o onmouseout e pra quando tira -->
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="specs.html">especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="fotos.html">fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="multimidia.html">multimidia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="fale-conosco.html">contato</a></li>
+                <!-- caso queira criar uma lista dentro de outra
+                <ul type="disc">
+                <li>musicas</li>
+                <li>videos</li>
+                </ul>
+                -->
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+<section id="corpo-full">
+
+    <article id="noticia-principal">
+
+        <header id="cabecalho-artigo">
+            <hgroup>
+                <h3>Glass > Especificações</h3>
+                <h1>Raio-X no Google Glass</h1>
+                <h2>por Gustavo Guanabara</h2>
+                <h3 class="direita">Atualizado em 23/Abril/2013</h3>
+            </hgroup>
+        </header>
+
+<p>Clique em qualquer área destacada da imagem para ter mais informações sobre os recursos do Google Glass. Qualquer ponto vermelho vai te levar a um lugar cheio de novas informações.</p>
+        <!-- CONTEUDO DO IFRAMEM A JANELA ABERTA DE OUTRO SITE NESSA PAG-->
+        <section id="conteudo">
+            <img src="_imagens/glass-esquema-marcado.jpg" usemap="#meumapa"/>
+            <map name="meumapa"><!-- relaciona ao mapa da imagem para passar o mouse e ficar sensivel-->
+                <area shape="rect" coords="179,202,270,260" href="google-glass.html#tela" target="janela"/><!-- <!--shape e o tipo de area que vai seleciona na img, no caso retangulo, area da img, e #tela e para no iframe parar no artigo da tela-->
+                <area shape="circle" coords="158,243,12" href="google-glass.html#camera" target="janela"/>
+                <area shape="poly" coords="28,143,83,216,84,249,27,169" href="google-glass.html#tela" target="janela"/>
+                <area shape="circle" class="73,52,12" href="google-glass.html#sensores" target="janela"/>
+            </map>
+            <!-- iframe-SERVE PARA COLOCAR OUTRA PAGINA  OU DOCUMENTO DE SITE
+            ID- SERVE PARA CONFIGURAR NO CSS-->
+            <iframe src="google-glass.html" name="janela" id="frame-spec"></iframe>
+        </section>
+
+    </article>
+</section>
+
+
+
+
+    <footer id="rodape"> <!--*footer para a area de baixo do site, tipo aside e section-->
+        Copyright 2013 - by Gustavo Guanabara<br/>
+        <a href="http://www.facebook.com.br" target="_blank">Facebook</a> | Twitter</p>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <title>tudo sobre o google glass</title>
+    <!-- link para o arquivo css -->
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css"/>
+
+    <!-- parte de javascript para a mudança das fotos e calculo do fret-->
+    <script language="JavaScript" src="_javascript/funcoes.js"> // tag usada para java script</script>
+    <script>
+        /*aq vai calcula de acordo com o numero de oculos escolhidos o valor total de pagamaento*/
+        function cal_total() {
+            var qtd = parseInt(document.getElementById('cqtd').value)
+            tot = qtd*1500;
+            document.getElementById('ctot').value = tot;
+        }
+
+    </script>
+
+    <head/>
+<body>
+<div id="interface">                <!--delimita o site e o id e pra identificar -->
+    <header id="cabecalho">             <!--cabeçalho para qualquer coisa , em qualquer parte do site -->
+
+        <!--agrupar titulos -->
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está hegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/contato.png" height="121" width="200"/>
+
+        <!-- nav cria uma area de navegação, o MENU DE NAVEGAÇÃO -->
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul type="disc" >
+                <!-- ol lista ordenada , type e o tipo de marcação e start e da onde comecara ;;; e ul e uma lista nao ordenada, type - disc para ser bolinha-->
+                <!-- onmouseover e para quando passa o mouse por cima da imag, ja o onmouseout e pra quando tira -->
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">multimidia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">contato</a></li>
+                <!-- caso queira criar uma lista dentro de outra
+                <ul type="disc">
+                <li>musicas</li>
+                <li>videos</li>
+                </ul>
+                -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="corpo-full">
+
+        <article id="noticia-principal">
+
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h3>glass > Fotos</h3>
+                    <h1>Raio-X no Google Glass</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3 class="direita">Atualizado em 23/Abril/2013</h3>
+                </hgroup>
+            </header>
+
+
+
+
+<!-- parte do formulario
+ form teg obrigatoria em td o formulario
+ legend e para a legenda do formulario-->
+
+<form method="post" id="fcontato" action="mailto:carloslima519@outlook.com" oninput="cal_total();"> <!--oninput quando digitar qualquer coisa ele vai disparar o procedimento-->
+<fieldset id="usuario"> <!--fieldset = "cria uma borfa" e coloca o legend entre essa borda conjunto de campos para formularios para cada um dos grupos-->
+    <legend>Identificação do Usuário</legend>
+    <!--size = tanto de caracteres
+    maxlength = o tanto que podera digita na caixa de txt
+    placeholder = dica do usuario
+    type=email serve para a validação automatica-->
+    <p>Nome: <input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="nome completo"/></p>
+    <p>Senha: <input type="password" name="tsenha" id="csenha" placeholder="senha"/></p>
+    <p>E-mail: <input type="email" name="tmail" id="cmail" size="20" maxlength="40"/></p>
+    <fieldset id="sexo"><legend>Sexo:</legend>
+        <!--radio serve para obter marcadores e label e para clicar em cima de masculino e seleciona-->
+        <input type="radio" name="tsexo" id="cmac"/><label for="cmac">Masculino</label><br/>
+        <input type="radio" name="tsexo" id="cfem"/><label for="cfem">Feminino</label>
+    <p>Data de Nascimento: <input type="date" name="tnasc" id="cnasc"/></p>
+    </fieldset>
+</fieldset>
+
+
+<fieldset id="endereco">
+    <legend>Endereço do Usuário</legend>
+    <p>Logradouro:<input type="text" name="trua" id="crua" size="10" placeholder="rua,av,trav"/></p>
+   <p> Número:<input type="number" name="tnum" id="cnum" min="0" max="999999"></p>
+    <!--tag select vai criar caixas de escolas-->
+   <p> Estado:
+   <select name="test" id="cest">
+       <!-- optgroup e para diferencia as regioes-->
+       <optgroup label="regiao sudeste">
+           <option value="rj">rio de janeiro</option>
+       <option value="sp">sao paulos</option>
+       </optgroup>
+   </select> </p>
+<!-- datalist "auto-complemento" colocando no input list o id. vc quando começa a digita aparecera o nome das cidades postas como opção-->
+    <p>Cidade <input type="text" name="tcid" id="ccid" maxlength="40" size="20" placeholder="sua cidade" list="cidades"></p>
+    <datalist id="cidades">
+        <option value="goiania"></option>
+        <option value="anapolis"></option>
+    </datalist>
+</fieldset>
+
+    
+<fieldset id="mensagem">
+    <!-- tyoe range, e outra forma de seleciona,-->
+    <legend>Mensagem do Usuário</legend>
+    <p>Grau de Urgência: max <input type="range" name="turg" id="curg" min="0" max="10" step="2"/>min</p>
+    <!-- textarea e uma caixa de texto maior-->
+    <p>Mensagem:<textarea name="tmsg" id="cmsg" cols="45" rows="5" placeholder="mensagem"></textarea> </p>
+</fieldset>
+
+
+<fieldset id="pedido">
+   <legend> Quero um Google Glass</legend>
+    <!--ckecbpz e uma caixinha para marcar-->
+    <p><input type="checkbox" name="tped" id="cped">Gostaria de adquirir um Google Glass quando disponível</p>
+    <p>Cor:<input type="color" name="tcor" id="ccor" value="blue"/></p>
+   <p> Quantidade:<input type="number" name="tqtd" id="cqtd" min="0" max="5" value="0"></p>
+    <p>Preço Total: R$<input type="text" name="ttot" id="ctot" placeholder="total a pagar"></p>
+</fieldset>
+
+<input type="submit" value="enviar"/>
+    <input type="image" name="tenviar" src="_imagens/botao-enviar.png"/>
+
+</form>
+
+
+
+        </article>
+    </section>
+    <footer id="rodape"> <!--*footer para a area de baixo do site, tipo aside e section-->
+        Copyright 2013 - by Gustavo Guanabara<br/>
+        <a href="http://www.facebook.com.br" target="_blank">Facebook</a> | Twitter</p>
+    </footer>
+
+</div>
+</body>
+</html>

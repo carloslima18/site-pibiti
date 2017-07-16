@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/*sessao que vai ficar o conteudo*/
+section#conteudo{
+    width: 1000px; /*largura*/
+    margin: auto; /*conteudo vai fica sempre centralizado*/
+}
+/*iframe, "janela da outra pag que vai esta em specs.html*/
+iframe#frame-spec{
+    width: 400px;
+    height: 280px;
+    border:  none;
+    overflow: hidden; /*evita que a rolagem do iframe aconteça*/
+}
+
+/*esconde a barra de colagem da janela*/
+iframe#frame-spec::-webkit-scrollbar{
+    display: none;
+}
